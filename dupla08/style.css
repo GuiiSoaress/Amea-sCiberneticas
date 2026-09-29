@@ -531,3 +531,52 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* --- Desafio do Analista --------------------- */
+.evidence-list {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.evidence-list li {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: .8rem 1rem;
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+}
+
+.question-box {
+  margin-top: 1.25rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.question-box p {
+  color: var(--ink);
+  font-weight: 600;
+  max-width: none;
+}
+
+.reveal-btn {
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--paper);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: .7rem 1.4rem;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.reveal-btn:hover { background: var(--paper); color: var(--accent); }
+.reveal-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.answer[hidden] { display: none; }
