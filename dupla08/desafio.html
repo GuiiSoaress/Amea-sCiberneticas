@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio do Analista — Atlas de Ameaças Cibernéticas | Dupla 08</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar de navegação -->
+  <nav class="topbar">
+    <a href="../index.html">← Atlas de Ameaças</a>
+    <span class="sep">/</span>
+    <span>Dupla 08</span>
+    <span class="sep">/</span>
+    <span>Desafio do Analista</span>
+  </nav>
+
+  <main>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-label">DUPLA 08 · DESAFIO DO ANALISTA</p>
+        <h1 class="hero-title">
+          <span class="keyword">Desafio do Analista</span>
+        </h1>
+        <p class="hero-summary">
+          Um incidente, algumas evidências e uma pergunta. Leia o cenário, monte sua hipótese e só depois revele a resposta.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======= CENÁRIO ======= -->
+    <section id="cenario">
+      <div class="container">
+        <span class="section-tag">CENÁRIO</span>
+        <h2>Alerta na segunda-feira, 08h10</h2>
+        <p>
+          O SOC da TechSecure S.A. recebeu um alerta ao iniciar o expediente. Durante o fim de semana, os registros de rede mostraram o seguinte:
+        </p>
+
+        <ul class="evidence-list">
+          <li>Uma estação do setor financeiro fez conexões de saída a cada 60 segundos para o mesmo endereço externo (203.0.113.45), na porta 8080, sem ninguém usando o computador.</li>
+          <li>Nos logs de DNS, outras 37 máquinas de setores diferentes consultaram o mesmo endereço, com o mesmo intervalo entre as conexões.</li>
+          <li>No domingo, às 03h00, todas essas máquinas dispararam ao mesmo tempo um grande volume de requisições contra um site externo. A rede interna ficou lenta por cerca de 40 minutos.</li>
+          <li>Nenhum arquivo foi criptografado e nenhuma mensagem de resgate apareceu.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= PERGUNTA ======= -->
+    <section id="pergunta">
+      <div class="container">
+        <span class="section-tag">PERGUNTA</span>
+        <h2>Qual é a sua hipótese?</h2>
+
+        <div class="question-box">
+          <p>Com base nas evidências, qual é a hipótese mais adequada para explicar o incidente? Justifiquem e indiquem qual seria a primeira ação da equipe de resposta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= RESPOSTA ======= -->
+    <section id="resposta">
+      <div class="container">
+        <span class="section-tag">RESPOSTA</span>
+        <h2>Revelação</h2>
+
+        <button type="button" class="reveal-btn" id="reveal-btn" aria-expanded="false" aria-controls="answer">Revelar resposta</button>
+
+        <div class="casebox answer" id="answer" hidden>
+          <div class="casebox-header">
+            <span class="casebox-badge">RESPOSTA: BOTNET</span>
+          </div>
+          <p>
+            O sinal decisivo é a coordenação: 38 máquinas comprometidas contatando o mesmo servidor de comando e controle e agindo no mesmo horário. Uma máquina isolada explicaria apenas o comportamento da estação do financeiro.
+          </p>
+          <p>
+            A ausência de criptografia e de pedido de resgate descarta ransomware. O impacto foi sobre a disponibilidade da rede.
+          </p>
+          <p>
+            <strong>Primeira ação:</strong> isolar as máquinas afetadas e bloquear o endereço de comando e controle no firewall.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Nav entre as páginas da dupla -->
+  <nav class="dupla-nav">
+    <div class="container">
+      <div class="dupla-nav-inner">
+        <a href="botnet.html" class="dupla-nav-link">← Anterior: Botnet</a>
+        <a href="../index.html" class="dupla-nav-link">Índice do Atlas →</a>
+      </div>
+    </div>
+  </nav>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">Atlas de Ameaças Cibernéticas · TechSecure S.A. · Dupla 08</p>
+        <p class="footer-copy">Guilherme Soares · Jean Vinicius</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('reveal-btn');
+      var answer = document.getElementById('answer');
+      btn.addEventListener('click', function () {
+        var open = answer.hasAttribute('hidden');
+        if (open) {
+          answer.removeAttribute('hidden');
+          btn.textContent = 'Ocultar resposta';
+        } else {
+          answer.setAttribute('hidden', '');
+          btn.textContent = 'Revelar resposta';
+        }
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+
+</body>
+</html>
