@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bot — Atlas de Ameaças Cibernéticas | Dupla 08</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar de navegação -->
+  <nav class="topbar">
+    <a href="../index.html">← Atlas de Ameaças</a>
+    <span class="sep">/</span>
+    <span>Dupla 08</span>
+    <span class="sep">/</span>
+    <span>Bot</span>
+  </nav>
+
+  <main>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-label">DUPLA 08 · AMEAÇA 1 DE 2</p>
+        <h1 class="hero-title">
+          <span class="keyword">Bot</span>
+        </h1>
+        <p class="hero-summary">
+          Um dispositivo infectado que passa a obedecer ordens remotas de um atacante — sem que o dono perceba nada de errado.
+        </p>
+        <div class="cia-badges">
+          <span class="badge badge-c">Confidencialidade ✗</span>
+          <span class="badge badge-i">Integridade ✗</span>
+          <span class="badge badge-a">Disponibilidade ✗</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= O QUE É ======= -->
+    <section id="conceito">
+      <div class="container">
+        <span class="section-tag">CONCEITO</span>
+        <h2>O que é um Bot?</h2>
+        <p>
+          Bot é um malware que, depois de infectar uma máquina, deixa ela disponível para ser comandada à distância por um atacante, sem que o dono perceba. Por isso, um dispositivo infectado costuma ser chamado de <em>"zumbi"</em>: ele continua funcionando normalmente para o usuário, mas por trás está executando ordens de outra pessoa.
+        </p>
+        <p>
+          O termo vem de <em>robot</em>. Na cibersegurança, descreve qualquer sistema comprometido que age de forma autônoma seguindo instruções de um servidor de Comando e Controle (C2).
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <p class="card-label">TAMBÉM CHAMADO DE</p>
+            <p class="card-value">Zumbi / Zombie host</p>
+          </div>
+          <div class="card">
+            <p class="card-label">CONTROLE VIA</p>
+            <p class="card-value">Servidor C2 (Command &amp; Control)</p>
+          </div>
+          <div class="card">
+            <p class="card-label">ALVOS MAIS COMUNS</p>
+            <p class="card-value">Dispositivos IoT, PCs, servidores</p>
+          </div>
+          <div class="card">
+            <p class="card-label">VISIBILIDADE</p>
+            <p class="card-value">Quase nenhuma para o usuário</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= HISTÓRICO ======= -->
+    <section id="historico">
+      <div class="container">
+        <span class="section-tag">HISTÓRICO &amp; EVOLUÇÃO</span>
+        <h2>Como chegamos até aqui</h2>
+        <p>
+          Bots maliciosos existem desde o começo dos anos 2000, quando canais de IRC eram usados para mandar comandos a máquinas infectadas. Com a internet ficando mais rápida e mais dispositivos conectados, o problema escalou.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <p class="timeline-year">Anos 2000 — Primeiros bots via IRC</p>
+            <p>Canais de IRC eram usados como canal de comando. Cada mensagem postada no canal era interpretada como ordem pelos bots infectados.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">Anos 2005–2010 — Botnets de spam</p>
+            <p>Redes como Storm e Conficker demonstraram que bots em massa podiam enviar bilhões de e-mails de spam por dia e resistir a tentativas de derrubada.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2016 — Mirai e a era IoT</p>
+            <p>O malware Mirai explorou roteadores, câmeras e gravadores digitais que ainda usavam senhas de fábrica, criando uma das maiores botnets já documentadas e derrubando serviços como Twitter e Netflix.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">Hoje — Bots em qualquer dispositivo</p>
+            <p>Smartphones, smart TVs, eletrodomésticos conectados e dispositivos industriais são vetores ativos. A superfície de ataque cresce junto com o número de dispositivos IoT no mundo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= COMO FUNCIONA ======= -->
+    <section id="funcionamento">
+      <div class="container">
+        <span class="section-tag">FUNCIONAMENTO</span>
+        <h2>Como um bot opera</h2>
+        <p>
+          O ciclo de vida de um bot passa por cinco etapas principais, desde a infecção inicial até a execução de tarefas maliciosas em segundo plano.
+        </p>
+
+        <figure class="figure">
+          <img src="assets/zombie-process-diagram.svg" alt="Diagrama mostrando o processo pelo qual um computador é infectado por um vírus, conectado a um servidor de comando e passa a atuar como zumbi enviando spam." />
+          <figcaption class="figure-caption">
+            Processo de infecção e recrutamento de um computador zumbi para uma rede de spam.
+            Fonte: <a href="https://commons.wikimedia.org/wiki/File:Zombie-process.svg" target="_blank" rel="noopener">Wikimedia Commons</a> — diagrama de FOo/DnetSvg, CC BY-SA 3.0 / GFDL.
+          </figcaption>
+        </figure>
+
+        <div class="steps">
+          <div class="step">
+            <strong>Infecção inicial</strong>
+            O atacante explora uma vulnerabilidade, senha fraca ou engenharia social para obter acesso ao dispositivo e instalar o malware.
+          </div>
+          <div class="step">
+            <strong>Persistência</strong>
+            O bot configura tarefas agendadas, entradas no registro ou scripts de inicialização para garantir que continue rodando após reinicializações.
+          </div>
+          <div class="step">
+            <strong>Conexão ao C2</strong>
+            O dispositivo infectado se conecta ao servidor de Comando e Controle (C2) — pode usar HTTP, IRC, canais P2P ou outros protocolos disfarçados.
+          </div>
+          <div class="step">
+            <strong>Espera por ordens</strong>
+            O bot fica em modo de escuta, consumindo poucos recursos para não levantar suspeitas, aguardando instruções do atacante (botmaster).
+          </div>
+          <div class="step">
+            <strong>Execução da tarefa maliciosa</strong>
+            Ao receber a ordem, o bot executa: envio de spam, participação em DDoS, mineração de criptomoeda, roubo de credenciais, varredura por novos alvos, entre outros.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= VETORES ======= -->
+    <section id="vetores">
+      <div class="container">
+        <span class="section-tag">VETORES DE COMPROMETIMENTO</span>
+        <h2>Como a infecção acontece</h2>
+        <p>
+          Os principais caminhos que levam um dispositivo a se tornar um bot são:
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <p class="card-label">VULNERABILIDADE</p>
+            <p class="card-value">Exploração de falhas em serviços expostos na internet, principalmente em dispositivos IoT sem atualização de firmware.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">CREDENCIAL FRACA</p>
+            <p class="card-value">Dispositivos que mantêm a senha padrão de fábrica — comum em câmeras, roteadores e gravadores digitais.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">PHISHING</p>
+            <p class="card-value">E-mail com link ou anexo malicioso que, ao ser aberto, instala o malware no dispositivo da vítima.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">SOFTWARE COMPROMETIDO</p>
+            <p class="card-value">Download de programas piratas ou de fontes não confiáveis que já incluem o bot embutido no instalador.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= IMPACTO ======= -->
+    <section id="impacto">
+      <div class="container">
+        <span class="section-tag">IMPACTO — TRÍADE CIA</span>
+        <h2>Objetivos e impactos</h2>
+        <p>
+          Mesmo um único bot já compromete os três pilares fundamentais da segurança da informação:
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <p class="card-label" style="color: var(--danger);">CONFIDENCIALIDADE</p>
+            <p class="card-value">Dados, credenciais e arquivos do dispositivo podem ser coletados e enviados ao atacante sem autorização.</p>
+          </div>
+          <div class="card">
+            <p class="card-label" style="color: var(--warn);">INTEGRIDADE</p>
+            <p class="card-value">O sistema pode ter sido alterado (arquivos substituídos, configurações modificadas) sem o conhecimento do proprietário.</p>
+          </div>
+          <div class="card">
+            <p class="card-label" style="color: var(--ok);">DISPONIBILIDADE</p>
+            <p class="card-value">O consumo de CPU, memória e banda para tarefas maliciosas deixa o aparelho mais lento, degradando o serviço legítimo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= DETECÇÃO ======= -->
+    <section id="deteccao">
+      <div class="container">
+        <span class="section-tag">DETECÇÃO</span>
+        <h2>Sinais de alerta</h2>
+        <p>
+          Um bot age de forma discreta, mas alguns indicadores comportamentais podem denunciá-lo:
+        </p>
+
+        <ul class="signal-list">
+          <li>Tráfego de rede saindo para endereços IP desconhecidos ou em horários incomuns (madrugada, quando ninguém está usando).</li>
+          <li>Uso elevado de CPU ou largura de banda sem nenhum processo visível rodando em primeiro plano.</li>
+          <li>Tentativas de conexão em portas incomuns (ex.: portas altas não utilizadas pelo sistema).</li>
+          <li>Processos ou tarefas agendadas que ninguém criou — aparecem no Gerenciador de Tarefas ou no <code>cron</code>.</li>
+          <li>Alterações em arquivos de sistema sem que nenhuma atualização legítima tenha sido aplicada.</li>
+          <li>Dispositivo IoT travando, reiniciando sozinho ou com comportamento errático sem causa aparente.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= EXEMPLO REAL ======= -->
+    <section id="exemplo">
+      <div class="container">
+        <span class="section-tag">EXEMPLO REAL</span>
+        <h2>Câmeras do Mirai — o bot individual</h2>
+
+        <div class="casebox">
+          <div class="casebox-header">
+            <span class="casebox-badge">CASO DOCUMENTADO · 2016</span>
+            <span class="casebox-badge" style="color:var(--warn); border-color:var(--warn);">IoT</span>
+          </div>
+          <p>
+            Cada câmera, roteador ou gravador digital infectado pelo Mirai era, individualmente, um bot. O dispositivo continuava gravando e exibindo imagens normalmente para o usuário, sem nenhum sinal visível de comprometimento.
+          </p>
+          <p>
+            Por trás, ele se conectava ao servidor C2 do Mirai e aguardava ordens. Quando o comando chegava, participava de ataques DDoS massivos — sem que o dono tivesse a menor ideia de que seu equipamento de segurança doméstica era parte de um ataque contra grandes infraestruturas da internet.
+          </p>
+          <p>
+            O vetor de infecção era simples: o Mirai varrinha a internet em busca de dispositivos com credenciais padrão de fábrica (como <code>admin/admin</code> ou <code>root/1234</code>) e os infectava automaticamente em questão de segundos após encontrá-los.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= PREVENÇÃO E RESPOSTA ======= -->
+    <section id="prevencao">
+      <div class="container">
+        <span class="section-tag">PREVENÇÃO &amp; RESPOSTA</span>
+        <h2>Como se proteger e reagir</h2>
+
+        <h3>Prevenção</h3>
+        <ul class="checklist">
+          <li>Trocar a senha padrão de fábrica em todos os dispositivos IoT imediatamente após a instalação.</li>
+          <li>Manter firmware e software sempre atualizados — a maioria das infecções explora vulnerabilidades conhecidas e já corrigidas.</li>
+          <li>Separar dispositivos IoT da rede principal usando uma VLAN ou rede Wi-Fi dedicada.</li>
+          <li>Configurar um firewall para bloquear conexões de saída desnecessárias.</li>
+          <li>Desativar serviços e portas que não estejam em uso (ex.: Telnet, SSH exposto para internet).</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Resposta a incidente</h3>
+        <ul class="checklist">
+          <li>Isolar imediatamente o dispositivo suspeito da rede para conter o comprometimento.</li>
+          <li>Analisar os logs de rede para identificar a extensão do problema e os endereços C2 envolvidos.</li>
+          <li>Fazer um reflash do firmware (limpeza completa) — uma simples reinicialização não remove o malware.</li>
+          <li>Trocar as senhas de todos os outros dispositivos da mesma rede, pois provavelmente compartilham credenciais semelhantes.</li>
+          <li>Registrar o incidente e comunicar ao responsável de segurança ou CSIRT da organização.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= REFERÊNCIAS ======= -->
+    <section id="referencias">
+      <div class="container">
+        <span class="section-tag">REFERÊNCIAS</span>
+        <h2>Fontes consultadas</h2>
+
+        <ul class="ref-list">
+          <li>
+            CERT.br. <em>Cartilha de Segurança para Internet — Fascículo Códigos Maliciosos.</em>
+            <a href="https://cartilha.cert.br/malware/" target="_blank" rel="noopener">cartilha.cert.br/malware/</a>
+          </li>
+          <li>
+            CISA. <em>Alert TA16-288A: Heightened DDoS Threat Posed by Mirai and Other Botnets.</em>
+            <a href="https://www.cisa.gov/ncas/alerts/TA16-288A" target="_blank" rel="noopener">cisa.gov/ncas/alerts/TA16-288A</a>
+          </li>
+          <li>
+            Kaspersky. <em>O que é uma Botnet?</em>
+            <a href="https://www.kaspersky.com.br/resource-center/threats/botnet-attacks" target="_blank" rel="noopener">kaspersky.com.br</a>
+          </li>
+          <li>
+            TecMundo. <em>O que são bots e botnets?</em>
+            <a href="https://www.tecmundo.com.br/spyware/2330-o-que-sao-bots-e-botnets-.htm" target="_blank" rel="noopener">tecmundo.com.br</a>
+          </li>
+          <li>
+            NAKAMURA, Emilio Tissato; GEUS, Paulo Lício de. <em>Segurança de Redes em Ambientes Cooperativos.</em> São Paulo: Novatec, 2007.
+          </li>
+          <li>
+            FOO; DnetSvg. <em>Zombie-process.svg</em> (diagrama). Wikimedia Commons, 2007. CC BY-SA 3.0 / GFDL.
+            <a href="https://commons.wikimedia.org/wiki/File:Zombie-process.svg" target="_blank" rel="noopener">commons.wikimedia.org</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Nav entre as páginas da dupla -->
+  <nav class="dupla-nav">
+    <div class="container">
+      <div class="dupla-nav-inner">
+        <a href="../index.html" class="dupla-nav-link">← Índice do Atlas</a>
+        <a href="botnet.html" class="dupla-nav-link">Próxima: Botnet →</a>
+      </div>
+    </div>
+  </nav>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">Atlas de Ameaças Cibernéticas · TechSecure S.A. · Dupla 08</p>
+        <p class="footer-copy">Guilherme Soares · Jean Vinicius</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

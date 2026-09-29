@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botnet — Atlas de Ameaças Cibernéticas | Dupla 08</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topbar de navegação -->
+  <nav class="topbar">
+    <a href="../index.html">← Atlas de Ameaças</a>
+    <span class="sep">/</span>
+    <span>Dupla 08</span>
+    <span class="sep">/</span>
+    <span>Botnet</span>
+  </nav>
+
+  <main>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-label">DUPLA 08 · AMEAÇA 2 DE 2</p>
+        <h1 class="hero-title">
+          <span class="keyword">Botnet</span>
+        </h1>
+        <p class="hero-summary">
+          Uma rede coordenada de dispositivos infectados, controlada por um único atacante — capaz de derrubar serviços inteiros quando age em conjunto.
+        </p>
+        <div class="cia-badges">
+          <span class="badge badge-c">Confidencialidade ✗</span>
+          <span class="badge badge-i">Integridade ✗</span>
+          <span class="badge badge-a">Disponibilidade ✗✗</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= O QUE É ======= -->
+    <section id="conceito">
+      <div class="container">
+        <span class="section-tag">CONCEITO</span>
+        <h2>O que é uma Botnet?</h2>
+        <p>
+          Botnet é a rede formada por vários bots — dispositivos infectados —, todos controlados ao mesmo tempo pelo mesmo atacante, chamado de <em>botmaster</em>. A ideia central é escala: um bot sozinho faz pouco, mas milhares deles agindo juntos conseguem derrubar praticamente qualquer serviço.
+        </p>
+        <p>
+          O botmaster emite um único comando e ele se replica para todos os dispositivos da rede simultaneamente. Isso torna ataques como o DDoS extremamente difíceis de mitigar, pois o tráfego malicioso vem de milhares de endereços IP diferentes e geograficamente distribuídos.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <p class="card-label">QUEM COMANDA</p>
+            <p class="card-value">Botmaster (atacante central)</p>
+          </div>
+          <div class="card">
+            <p class="card-label">ESCALA</p>
+            <p class="card-value">Dezenas a milhões de dispositivos</p>
+          </div>
+          <div class="card">
+            <p class="card-label">USOS COMUNS</p>
+            <p class="card-value">DDoS, spam, fraude, cryptojacking</p>
+          </div>
+          <div class="card">
+            <p class="card-label">MODELO DE NEGÓCIO</p>
+            <p class="card-value">Aluguel como serviço (booter/stresser)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= HISTÓRICO ======= -->
+    <section id="historico">
+      <div class="container">
+        <span class="section-tag">HISTÓRICO &amp; EVOLUÇÃO</span>
+        <h2>Da rede de spam ao ataque global</h2>
+        <p>
+          As primeiras botnets grandes surgiram no início dos anos 2000 ligadas a campanhas de spam e fraude financeira. Com o tempo, tanto a arquitetura quanto os objetivos evoluíram consideravelmente.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <p class="timeline-year">2000–2005 — Botnets centralizadas</p>
+            <p>Arquitetura cliente-servidor simples: um servidor central de C2 controlava tudo. Fácil de derrubar — bastava apreender aquele servidor para desativar a rede inteira.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2007 — Storm Worm</p>
+            <p>Uma das primeiras botnets a adotar arquitetura P2P (ponto a ponto), sem um único servidor central. Tornou-se muito mais resiliente: derrubar um nó não afetava os demais.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2008–2009 — Conficker</p>
+            <p>Infectou milhões de máquinas Windows explorando uma vulnerabilidade do serviço de chamada de procedimento remoto (RPC). Usava algoritmos de geração de domínios (DGA) para dificultar o bloqueio dos servidores C2.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">2016 — Mirai e a virada IoT</p>
+            <p>Demonstrou que dispositivos IoT com credenciais padrão eram alvos fáceis e abundantes. Gerou ataques DDoS recordes e teve seu código-fonte vazado, gerando dezenas de variantes ativas até hoje.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-year">Hoje — Botnets como serviço</p>
+            <p>Botnets modernas são alugadas na dark web como "booter" ou "stresser", permitindo que qualquer pessoa sem conhecimento técnico contrate um ataque DDoS por hora ou por alvo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= COMO FUNCIONA ======= -->
+    <section id="funcionamento">
+      <div class="container">
+        <span class="section-tag">FUNCIONAMENTO</span>
+        <h2>Como uma botnet opera</h2>
+        <p>
+          A botnet é um sistema vivo: ela cresce continuamente e executa operações coordenadas de grande escala.
+        </p>
+
+        <figure class="figure">
+          <img src="assets/botnet-diagram.svg" alt="Diagrama em quatro etapas mostrando como um criador de vírus infecta computadores, que se conectam a um servidor de comando e controle, e como um operador de spam compra acesso a essa rede para disparar ataques em massa." />
+          <figcaption class="figure-caption">
+            Do vírus à rede coordenada: como computadores infectados são conectados a um servidor de comando e usados para disparar ataques em massa.
+            Fonte: <a href="https://commons.wikimedia.org/wiki/File:Botnet.svg" target="_blank" rel="noopener">Wikimedia Commons</a> — diagrama de Tom-b, CC BY-SA 3.0 / GFDL.
+          </figcaption>
+        </figure>
+
+        <div class="steps">
+          <div class="step">
+            <strong>Varredura automática</strong>
+            Um scanner percorre continuamente faixas de endereços IP na internet em busca de dispositivos com portas abertas, serviços vulneráveis ou credenciais padrão.
+          </div>
+          <div class="step">
+            <strong>Recrutamento em massa</strong>
+            Ao encontrar um alvo vulnerável, o malware é instalado automaticamente. O dispositivo vira um bot e passa a fazer parte da rede — sem ação manual do botmaster.
+          </div>
+          <div class="step">
+            <strong>Organização sob comando único</strong>
+            Todos os bots se conectam à mesma infraestrutura de C2 (centralizada, P2P ou híbrida). O botmaster tem visão de toda a rede e pode segmentá-la por tipo de dispositivo ou localização.
+          </div>
+          <div class="step">
+            <strong>Comando em escala</strong>
+            Uma única instrução do botmaster é distribuída para todos os bots simultaneamente. Cada um executa sua parte da tarefa — seja enviar tráfego, enviar spam ou minerar criptomoeda.
+          </div>
+          <div class="step">
+            <strong>Evasão e resiliência</strong>
+            Botnets modernas rotacionam servidores C2, usam domínios gerados por algoritmo (DGA) ou comunicação P2P para dificultar a derrubada da infraestrutura por autoridades e pesquisadores de segurança.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= VETORES ======= -->
+    <section id="vetores">
+      <div class="container">
+        <span class="section-tag">VETORES DE COMPROMETIMENTO</span>
+        <h2>Como a botnet se expande</h2>
+        <p>
+          O crescimento de uma botnet é quase totalmente automatizado e ocorre por três caminhos principais:
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <p class="card-label">VARREDURA EM MASSA</p>
+            <p class="card-value">Bots já infectados varrem a internet procurando portas abertas e credenciais padrão — especialmente em dispositivos IoT sem proteção.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">EXPLORAÇÃO DE CVE</p>
+            <p class="card-value">Vulnerabilidades conhecidas e ainda não corrigidas são exploradas automaticamente assim que o exploit é integrado ao código do malware.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">WORMS AUTORREPLICANTES</p>
+            <p class="card-value">Componentes worm dentro do malware se propagam de um dispositivo vulnerável para outro sem interação humana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= IMPACTO ======= -->
+    <section id="impacto">
+      <div class="container">
+        <span class="section-tag">IMPACTO — TRÍADE CIA</span>
+        <h2>Objetivos e impactos</h2>
+        <p>
+          O impacto de uma botnet é muito maior do que o de um bot isolado — e se multiplica conforme a rede cresce.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <p class="card-label" style="color: var(--danger);">CONFIDENCIALIDADE</p>
+            <p class="card-value">Roubo em escala de credenciais, dados bancários e informações corporativas coletadas de todos os dispositivos infectados.</p>
+          </div>
+          <div class="card">
+            <p class="card-label" style="color: var(--warn);">INTEGRIDADE</p>
+            <p class="card-value">Fraude de clique em anúncios, manipulação de resultados e envio de spam em massa comprometem a confiabilidade de sistemas e métricas.</p>
+          </div>
+          <div class="card">
+            <p class="card-label" style="color: var(--ok);">DISPONIBILIDADE</p>
+            <p class="card-value">Ataques DDoS com tráfego de milhares de fontes simultâneas derrubam serviços inteiros — este é o impacto mais associado a botnets.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem;">Outros usos documentados</h3>
+        <ul class="signal-list" style="margin-top:.5rem;">
+          <li>Envio de spam em massa (bilhões de mensagens por dia em campanhas históricas).</li>
+          <li>Fraude de clique em anúncios digitais, gerando lucro para o botmaster à custa dos anunciantes.</li>
+          <li>Cryptojacking distribuído — mineração de criptomoeda usando os recursos de todos os bots simultaneamente.</li>
+          <li>Aluguel da rede para outros criminosos como serviço de "booter/stresser" na dark web.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= DETECÇÃO ======= -->
+    <section id="deteccao">
+      <div class="container">
+        <span class="section-tag">DETECÇÃO</span>
+        <h2>Como identificar atividade de botnet</h2>
+        <p>
+          Detectar uma botnet geralmente exige análise de padrões em vários dispositivos ao mesmo tempo — não só em um host isolado:
+        </p>
+
+        <ul class="signal-list">
+          <li>Troca de inteligência de ameaças entre empresas de segurança — listas de IPs e domínios C2 conhecidos.</li>
+          <li>Monitoramento de rede em busca de padrões de varredura em massa vindo de múltiplos dispositivos internos.</li>
+          <li>Picos de tráfego saindo todos para o mesmo destino externo em curto intervalo de tempo.</li>
+          <li>Correlação de eventos em SIEM: vários hosts apresentando o mesmo comportamento anômalo ao mesmo tempo.</li>
+          <li>Alertas de provedor de internet sobre tráfego de saída fora do padrão da organização.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= ESTUDO DE CASO ======= -->
+    <section id="caso">
+      <div class="container">
+        <span class="section-tag">ESTUDO DE CASO</span>
+        <h2>Mirai Botnet (2016)</h2>
+
+        <div class="casebox">
+          <div class="casebox-header">
+            <span class="casebox-badge">CASO DOCUMENTADO · 2016</span>
+            <span class="casebox-badge" style="color:var(--warn); border-color:var(--warn);">DDoS RECORDE</span>
+            <span class="casebox-badge" style="color:var(--ok); border-color:var(--ok);">IoT</span>
+          </div>
+
+          <p>
+            Em agosto de 2016, surgiu a botnet Mirai, criada por um grupo de estudantes que, inicialmente, só queria derrubar servidores rivais de Minecraft com ataques DDoS. O malware varrinha a internet em busca de dispositivos IoT — câmeras, roteadores, gravadores digitais — que ainda usavam a senha padrão de fábrica. Ao encontrar um alvo, infectava e o recrutava automaticamente para a rede.
+          </p>
+
+          <div class="card-grid" style="margin: 1rem 0;">
+            <div class="card">
+              <p class="card-label">SETEMBRO 2016</p>
+              <p class="card-value">Ataque ao blog de Brian Krebs: mais de 620 Gbps de tráfego — um dos maiores DDoS já registrados na época.</p>
+            </div>
+            <div class="card">
+              <p class="card-label">SETEMBRO 2016</p>
+              <p class="card-value">Ataque ao provedor francês OVH com volume ainda maior, superando o recorde anterior em dias.</p>
+            </div>
+            <div class="card">
+              <p class="card-label">OUTUBRO 2016</p>
+              <p class="card-value">Ataque à Dyn (DNS provider) deixou Twitter, Netflix e Reddit fora do ar para usuários em diversas regiões do mundo.</p>
+            </div>
+          </div>
+
+          <p>
+            Pouco depois, o código-fonte do Mirai foi divulgado publicamente, permitindo que outros grupos criassem variantes próprias. Esse legado faz com que botnets baseadas no Mirai ainda sejam uma ameaça ativa hoje, quase uma década depois do incidente original.
+          </p>
+          <p>
+            O caso demonstra como dispositivos comuns de uso doméstico, quando mal configurados, podem se tornar parte involuntária de um ataque que afeta a infraestrutura global da internet.
+          </p>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= TABELA COMPARATIVA ======= -->
+    <section id="comparacao">
+      <div class="container">
+        <span class="section-tag">COMPARAÇÃO</span>
+        <h2>Bot × Botnet</h2>
+        <p>
+          Os dois conceitos são complementares: um é a unidade, o outro é a rede. Entender a diferença é essencial para diagnosticar corretamente um incidente.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>Bot (dispositivo individual)</th>
+                <th>Botnet (rede coordenada)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>O que é</td>
+                <td>Um dispositivo infectado e controlado remotamente</td>
+                <td>Rede de vários bots controlados juntos pelo mesmo atacante</td>
+              </tr>
+              <tr>
+                <td>Quem manda</td>
+                <td>Recebe ordens individualmente via C2</td>
+                <td>Botmaster envia um comando que se replica para todos ao mesmo tempo</td>
+              </tr>
+              <tr>
+                <td>Escala</td>
+                <td>Impacto limitado ao próprio dispositivo</td>
+                <td>Impacto multiplicado pela quantidade de bots — pode chegar a milhões</td>
+              </tr>
+              <tr>
+                <td>Detecção</td>
+                <td>Sinal isolado naquele host (tráfego, CPU, processos)</td>
+                <td>Padrão coordenado entre vários hosts — requer análise de rede ou SIEM</td>
+              </tr>
+              <tr>
+                <td>Ataque típico</td>
+                <td>Roubo local de credenciais, spam individual</td>
+                <td>DDoS volumétrico, spam em massa, cryptojacking distribuído</td>
+              </tr>
+              <tr>
+                <td>Exemplo Mirai</td>
+                <td>Uma única câmera infectada com senha padrão</td>
+                <td>A rede completa de câmeras que derrubou a Dyn em outubro de 2016</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= PREVENÇÃO E RESPOSTA ======= -->
+    <section id="prevencao">
+      <div class="container">
+        <span class="section-tag">PREVENÇÃO &amp; RESPOSTA</span>
+        <h2>Como se proteger e reagir</h2>
+
+        <h3>Prevenção — múltiplos atores</h3>
+        <ul class="checklist">
+          <li><strong>Fabricantes:</strong> não comercializar dispositivos com senhas padrão fixas — exigir troca obrigatória na primeira configuração.</li>
+          <li><strong>Administradores de rede:</strong> manter firmware e software atualizados; segmentar a rede para isolar dispositivos IoT.</li>
+          <li><strong>Provedores de internet:</strong> implementar filtragem de tráfego anômalo próximo à origem para reduzir o volume de ataques DDoS que alcança o alvo.</li>
+          <li><strong>Usuários:</strong> trocar senhas padrão, desativar serviços desnecessários e monitorar o comportamento dos dispositivos.</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">Resposta a incidente</h3>
+        <ul class="checklist">
+          <li>Acionar um serviço de mitigação de DDoS (ex.: Cloudflare, Akamai) para absorver o tráfego malicioso antes que ele atinja a infraestrutura.</li>
+          <li>Contatar CSIRTs e provedores de internet para filtrar o tráfego mais próximo da origem.</li>
+          <li>Bloquear os IPs e domínios C2 identificados no perímetro da rede.</li>
+          <li>Investigar o incidente após a contenção para identificar os dispositivos que participaram e notificar seus proprietários.</li>
+          <li>Registrar e compartilhar indicadores de comprometimento (IoCs) com a comunidade de segurança.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= REFERÊNCIAS ======= -->
+    <section id="referencias">
+      <div class="container">
+        <span class="section-tag">REFERÊNCIAS</span>
+        <h2>Fontes consultadas</h2>
+
+        <ul class="ref-list">
+          <li>
+            CISA. <em>Alert TA16-288A: Heightened DDoS Threat Posed by Mirai and Other Botnets.</em>
+            <a href="https://www.cisa.gov/ncas/alerts/TA16-288A" target="_blank" rel="noopener">cisa.gov/ncas/alerts/TA16-288A</a>
+          </li>
+          <li>
+            CERT.br. <em>Cartilha de Segurança para Internet — Fascículo Códigos Maliciosos.</em>
+            <a href="https://cartilha.cert.br/malware/" target="_blank" rel="noopener">cartilha.cert.br/malware/</a>
+          </li>
+          <li>
+            Kaspersky. <em>O que é uma Botnet?</em>
+            <a href="https://www.kaspersky.com.br/resource-center/threats/botnet-attacks" target="_blank" rel="noopener">kaspersky.com.br</a>
+          </li>
+          <li>
+            Olhar Digital. <em>O que é uma botnet? Veja se você faz parte de uma.</em>
+            <a href="https://olhardigital.com.br/2025/12/09/seguranca/o-que-e-uma-botnet-veja-se-voce-faz-parte-de-uma/" target="_blank" rel="noopener">olhardigital.com.br</a>
+          </li>
+          <li>
+            NAKAMURA, Emilio Tissato; GEUS, Paulo Lício de. <em>Segurança de Redes em Ambientes Cooperativos.</em> São Paulo: Novatec, 2007.
+          </li>
+          <li>
+            TOM-B. <em>Botnet.svg</em> (diagrama). Wikimedia Commons, 2009. CC BY-SA 3.0 / GFDL.
+            <a href="https://commons.wikimedia.org/wiki/File:Botnet.svg" target="_blank" rel="noopener">commons.wikimedia.org</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Nav entre as páginas da dupla -->
+  <nav class="dupla-nav">
+    <div class="container">
+      <div class="dupla-nav-inner">
+        <a href="bot.html" class="dupla-nav-link">← Anterior: Bot</a>
+        <a href="../index.html" class="dupla-nav-link">Índice do Atlas →</a>
+      </div>
+    </div>
+  </nav>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">Atlas de Ameaças Cibernéticas · TechSecure S.A. · Dupla 08</p>
+        <p class="footer-copy">Guilherme Soares · Jean Vinicius</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
